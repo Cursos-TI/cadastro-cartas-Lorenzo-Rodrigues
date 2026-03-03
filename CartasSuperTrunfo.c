@@ -16,6 +16,10 @@ int main()
     
     float densidadePopulacional1, densidadePopulacional2, pibPerCapita1, pibPerCapita2;
     
+    int comparacaoPopulacao, comparacaoArea, comparacaoPib, comparacaoPontosTuristicos;
+    
+    int comparacaoDensidadePopulacional, comparacaoPibPerCapita, comparacaoSuperPoder;
+    
     printf("Cadastre a primeira carta:\n");
     printf("Digite o estado:");
     scanf(" %c",&estado1);
@@ -79,6 +83,33 @@ int main()
     printf("Número de pontos turísticos: %d \n", pontosTuristicos2);
     printf("Densidade populacional: %.2f \n", densidadePopulacional2);
     printf("PIB per Capita: %.2f \n", pibPerCapita2);
+    
+    float superPoder1, superPoder2;
+    
+    superPoder1 = populacao1 + area1 + pib1 + pontosTuristicos1 + pibPerCapita1 + (1/densidadePopulacional1);
+    superPoder2 = populacao2 + area2 + pib2 + pontosTuristicos2 + pibPerCapita2 + (1/densidadePopulacional2);
+    
+    
+    comparacaoPopulacao = populacao1 > populacao2;
+    comparacaoArea = area1 > area2;
+    comparacaoPib = pib1 > pib2;
+    comparacaoPontosTuristicos = pontosTuristicos1 > pontosTuristicos2;
+    comparacaoDensidadePopulacional = densidadePopulacional1 < densidadePopulacional2;
+    comparacaoPibPerCapita = pibPerCapita1 > pibPerCapita2;
+    comparacaoSuperPoder = superPoder1 > superPoder2;
+    
+    
+    
+    printf("------------------------ \n");
+    printf("Comparação de atributos entre as cartas");
+    printf("O vencedor é decidido (1) para carta 1 e (0) para carta 2\n");
+    printf("População: %d\n",comparacaoPopulacao);
+    printf("Área:%d \n", comparacaoArea);
+    printf("PIB:%d \n", comparacaoPib);
+    printf("Pontos turísticos:%d \n", comparacaoPontosTuristicos);
+    printf("Densidade populacional:%d \n", comparacaoDensidadePopulacional);
+    printf("PIB per Capita:%d \n",comparacaoPibPerCapita);
+    printf("Super poder: %d\n", comparacaoSuperPoder);
     
     return 0;
 }
