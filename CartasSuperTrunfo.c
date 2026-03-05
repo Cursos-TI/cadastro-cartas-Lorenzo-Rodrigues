@@ -1,21 +1,18 @@
 #include <stdio.h>
 
-// Desafio Super Trunfo - Países
-// Tema 1 - Cadastro das cartas
-// Objetivo: No nível novato você deve criar as cartas representando as cidades utilizando scanf para entrada de dados e printf para exibir as informações.
 
 int main()
 {
     char estado1, estado2;
-    
+
     char codigoDaCarta1[5], codigoDaCarta2[5], nomeDaCidade1[20], nomeDaCidade2[20];
-    
+
     int populacao1, populacao2, pontosTuristicos1, pontosTuristicos2;
-    
+
     float area1, area2, pib1, pib2;
-    
+
     float densidadePopulacional1, densidadePopulacional2, pibPerCapita1, pibPerCapita2;
-    
+
     int comparacaoPopulacao, comparacaoArea, comparacaoPib, comparacaoPontosTuristicos;
     
     int comparacaoDensidadePopulacional, comparacaoPibPerCapita, comparacaoSuperPoder;
@@ -35,8 +32,8 @@ int main()
     scanf("%f", &pib1);
     printf("Digite o numero de pontos turisticos:");
     scanf("%d", &pontosTuristicos1);
-    
-    
+
+
     printf("--------------------------------------- \n");
     printf("Cadastre a segunda carta:\n");
     printf("Digite o estado:");
@@ -53,13 +50,13 @@ int main()
     scanf("%f", &pib2);
     printf("Digite o numero de pontos turisticos:");
     scanf("%d", &pontosTuristicos2);
-    
+
     densidadePopulacional1 = populacao1 / area1;
     densidadePopulacional2 = populacao2 / area2;
-    
+
     pibPerCapita1 = pib1 / populacao1;
     pibPerCapita2 = pib2 / populacao2;
-    
+
     printf("--------------------------------------\n");
     printf("Carta 1: \n");
     printf("Estado: %c \n", estado1);
@@ -71,7 +68,7 @@ int main()
     printf("Número de pontos turísticos: %d \n", pontosTuristicos1);
     printf("Densidade populacional: %.2f \n", densidadePopulacional1);
     printf("PIB per Capita: %.2f \n", pibPerCapita1);
-    
+
     printf("---------------------------------------\n");
     printf("Carta 2: \n");
     printf("Estado: %c \n", estado2);
@@ -83,7 +80,7 @@ int main()
     printf("Número de pontos turísticos: %d \n", pontosTuristicos2);
     printf("Densidade populacional: %.2f \n", densidadePopulacional2);
     printf("PIB per Capita: %.2f \n", pibPerCapita2);
-    
+
     float superPoder1, superPoder2;
     
     superPoder1 = populacao1 + area1 + pib1 + pontosTuristicos1 + pibPerCapita1 + (1/densidadePopulacional1);
@@ -101,9 +98,21 @@ int main()
     
     
     printf("------------------------ \n");
-    printf("Comparação de atributos entre as cartas");
+    printf("Comparação de atributos entre as cartas\n");
     printf("O vencedor é decidido (1) para carta 1 e (0) para carta 2\n");
     printf("População: %d\n",comparacaoPopulacao);
+    
+    printf("Comparação de cartas (Atributo: População)\n");
+    printf("Carta 1: %d\n", populacao1);
+    printf("Carta 2: %d\n", populacao2);
+    if(populacao1 > populacao2){
+        printf("Resultado: Carta 1 venceu!\n");
+    } else if(populacao2 > populacao1){
+        printf("Resultado: Carta 2 venceu!\n");
+    } else{
+        printf("Resultado: empate!\n");
+    };
+
     printf("Área:%d \n", comparacaoArea);
     printf("PIB:%d \n", comparacaoPib);
     printf("Pontos turísticos:%d \n", comparacaoPontosTuristicos);
